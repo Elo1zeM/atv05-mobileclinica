@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinária Alpha Vet</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    barlow: ['Barlow', 'sans-serif'],
+                },
+                colors: {
+                    primary: '#1b4414',
+                    verde: '#1b4414',        // verde escuro
+                    verdeClaro: '#778f73',   // verde mais claro
+                    prata: '#c0c0c0',        // prata
+                    preto: '#000000',         // preto
+                    branco: '#ffffff'         // branco
+                }
+            }
+        }
+    }
+</script>
+</head>
+</head>
+
+<body class="bg-gray-100">
+
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <!-- LOGO -->
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-green-800
+                text-lg">ALPHA VET</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#home" class="py-4 px-2 text-green-500border-b-4 border-green-500 font-semibold">HOME</a>
+                        <a href="#produtos" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Produtos</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button" id="btn-mobile">
+                        <svg class="w-6 h-6 text-black-500 hover:text-red-500" x-show="!showMenu" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- segundo formato -->
+        <div class="hidden mobile-menu md:hidden" id="menu-mobile">
+            <ul>
+                <li><a href="#home" class="block text-sm px-2 py-4 text-white bg-green-300 font-semibold">Home</a></li>
+                <li><a href="#produtos"
+                        class="block text-sm px-2 py-4 text-white bg-green-300 transition duration-300">Produtos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        //seleciona o botão menu
+        const btn = document.getElementById('btn-mobile');
+        const menu = document.getElementById('menu-mobile');
+
+        //adiciona um evento de clique ao botão
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    </head>
+
+    <body class="font-barlow text-gray-800">
+
+    <header class="flex justify-center mt-[5vh]">
+
+        <figure>
+            <img src="./assets/img/logo.png" alt="Logo AlphaVet" class="w-[300vw] max-w-[300px]">
+        </figure>
+
+    </header>
+
+</body>
+
+        <!-- Menu Mobile -->
+        <div id="mobileMenu"
+            class="fixed top-0 right-[-100%] w-[70%] h-full bg-white shadow-lg transition-all duration-300 p-8 md:hidden z-50">
+
+            <button id="closeBtn" class="text-2xl mb-6">
+                ✕
+            </button>
+
+            <ul class="flex flex-col gap-6 text-lg">
+                <li><a href="#home" class="hover:text-'#778f73' transition">Home</a></li>
+                <li><a href="#produtos" class="hover:text-'#778f73' transition">Produtos</a></li>
+            </ul>
+
+        </div>
+
+        <section class="text-center p-8">
+
+            <div class="md:flex md:items-center md:justify-center md:gap-10">
+
+                <article class="md:w-[45%]">
+
+                    <h1 class="text-2xl md:text-4xl font-semibold">
+                        Clínica Veterinária Alpha Vet
+                    </h1>
+
+                    <a href="#produtos"
+                        class="inline-block mt-4 px-8 py-4 border border-gray-800 rounded-xl text-lg min-h-[48px] hover:bg-primary hover:text-white transition">
+                        SERVIÇOS
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!--  CARDÁPIO -->
+        <section id="produtos" class="max-w-[90vw] mx-auto mt-[5vh] p-8">
+
+            <h2 class="text-3xl font-bold text-center mb-8">
+                Serviços e Produtos
+            </h2>
+
+            <!-- inicio botoes de menu - categoria -->
+            <nav id="nav-produtos" class="overflow-x-auto whitespace-nowrap snap-x flex gap-2 mt-6 pb-1">
+                <button data-cat="medicamentos"
+                    class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+                    Medicamentos
+                </button>
+                <button data-cat="cirurgias"
+                    class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+                    Cirurgias
+                </button>
+                <button data-cat="petiscos"
+                    class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+                    Petiscos
+                </button>
+            </nav>
+            <!-- fim do botao menu - categoria -->
+
+            <!-- Sushi - separar por categoria-->
+            <div id="cat-medicamentos" class="produtos-conteudo">
+                <h3 class="text-primary text-xl mt-6 font-semibold">
+                    Medicamentos
+                </h3>
+
+                <div class="mt-4 space-y-4">
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg">Bravecto – Antipulgas e Carrapatos</h4>
+                            <span class="text-primary">R$ 179,90</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                           Medicamento parasiticida que protege cães contra pulgas e carrapatos por 3 meses com uma única dose.
+                        </p>
+                    </article>
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg">Prediderm 5 mg</h4>
+                            <span class="text-primary">R$ 19,90</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                           Anti‑inflamatório para cães, usado para aliviar dor e inflamação em músculos e articulações.
+                        </p>
+                    </article>
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg"> Furolisin 10 Comprimidos</h4>
+                            <span class="text-primary">R$ 16,90</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Diurético usado em alguns casos veterinários para auxiliar no controle de retenção de líquidos conforme prescrição.
+                        </p>
+                    </article>
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg"> Suplemento Beneflora Vet Avert</h4>
+                            <span class="text-primary">R$ 89,90</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Suplemento probiótico para saúde intestinal de cães e gatos (não é medicamento curativo, mas auxilia no equilíbrio da microbiota).
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+
+            <!-- Bebidas -->
+            <div id="cat-cirurgias" class="produtos-conteudo">
+                <h3 class="text-primary text-xl mt-10 font-semibold">
+                    Cirurgias
+                </h3>
+
+                <div class="mt-4 space-y-4">
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg">Castração</h4>
+                            <span class="text-primary">R$ 450,00</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Pacote Cirúrgico: Avaliação pré‑anestésica, Anestesia geral, Antibióticos e analgésicos pós‑operatórios
+
+
+                        </p>
+                    </article>
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg">Cesárea</h4>
+                            <span class="text-primary">R$ 750,00</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Exames pré‑anestésicos, Anestesia geral, Cuidados com os filhotes (primeiros exames) e Medicamentos pós‑op
+                        </p>
+                    </article>
+
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg">Cirurgia de Obstrução</h4>
+                            <span class="text-primary">R$ 850,00</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Exames de imagem, Avaliação e preparo anestésico, Anestesia geral, Antibióticos e analgésicos
+
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+
+            <div id="cat-petiscos" class="produtos-conteudo">
+                <h3 class="text-primary text-xl mt-6 font-semibold">
+                    Petiscos
+                </h3>
+
+                <div class="mt-4 space-y-4">
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg"> Vet Snack Weight Control 85g</h4>
+                            <span class="text-primary">R$ 26,90</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Petisco de baixa caloria desenhado especialmente para controle de peso, ideal para cães com tendência à obesidade ou em dieta.
+                        </p>
+                    </article>
+
+                    <article>
+                        <div class="flex justify-between">
+                            <h4 class="font-bold text-lg"> Dog Treat Naturals Superfood Sticks</h4>
+                            <span class="text-primary">R$ 69,90</span>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Petiscos naturais com superfoods (ex.: batata‑doce, quinoa), ricos em nutrientes e antioxidantes — boa escolha para petisco fit e saudável.
+                        </p>
+                    </article>
+
+                </div>
+
+        </section>
+
+        <footer class="bg-green-900 text-white text-center p-12 mt-[5vh]">
+            <p>© 2026 AlphaVet  - Todos os direitos reservados</p>
+
+            <p class="mb-2">Rua Castanho Taques, Jd. Ana Maria, Número 50</p>
+            <p class="mb-2">(15) 99160-1414</p>
+            <p class="mb-2">Aberto todos os das das 08h ás 22h</p>
+
+        </footer>
+
+
+        <aside>
+            <a href="https://wa.me/5515991601414">
+                <img src="./assets/img/whatsapp.png" class="h-[5vh] fixed bottom-[2vh] right-[4vw]" alt="WhatsApp">
+            </a>
+        </aside>
+
+        <!-- script para botão categoria -->
+        <!-- separar cada categoria -->
+        <script>
+            const botoes = document.querySelectorAll('.btn-cat');
+            const conteudos = document.querySelectorAll('.produtos-conteudo');
+
+            function mudarProdutos(cat) {
+                //mostra apenas a categoria selecionadas
+                conteudos.forEach(div => {
+                    div.id === 'cat-' + cat ? div.classList.remove('hidden') : div.classList.add('hidden')
+                });
+                //atualiza o estilo do botão ativo
+                botoes.forEach(btn => {
+                    if (btn.dataset.cat === cat) {
+                        btn.classList.add('bg-primary', 'text-white');
+                        btn.classList.remove('bg-[#ebebeb]', 'text-dark');
+                    } else {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('bg-[#ebebeb]', 'text-dark')
+                    }
+                });
+            }
+
+            // //adiciona eventos a cada botão
+            // botoes.forEach(btn => {
+            //     btn.addEventListener('touchstart', () => {
+            //         btn.classList.add('scale-95');
+            //         mudarCategoria(btn.dataset.cat);
+            //     });
+            //     btn.addEventListener('touchend', () => {
+            //         btn.classList.remove('scale-95');
+            //     });
+            //     btn.addEventListener('click', () => {
+            //         mudarCategoria(btn.dataset.cat)
+            //     });
+            // });
+
+            //adiciona scroll suave para links internos
+            let startX = 0;
+            let startY = 0;
+
+            //evento de cada botão
+            botoes.forEach(btn => {
+                //touchstart é disparado assim que o dedo toca a tela
+                btn.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                    //aplica class tailwind para efeito de clique
+                    btn.classList.add('scale-95', 'opacity-80');
+                });
+                //touchend quando tira o dedo da tela
+                btn.addEventListener('touchend', (e) => {
+                    //remove efeito visual
+                    btn.classList.remove('scale-95', 'opacity-80');
+                    //ultima posição deo dedo antes de levantar
+                    const endX = e.changedTouches[0].clientX;
+                    const endY = e.changedTouches[0].clientY;
+                    //calcula distancia do mov.
+                    const deltaX = Math.abs(endX - startX);
+                    const deltaY = Math.abs(endY - startY);
+                    //logica matemática se move menos de 10px = clique intensional
+                    if (deltaX < 10 && deltaY < 10) {
+                        mudarCategoria(btn.dataset.cat);
+                    }
+                });
+                //touchcancel se o calcular aparecer uma ligação ou notificação popup
+                btn.addEventListener('touchcancel', () => {
+                    btn.classList.remove('scale-95', 'opacity-80');
+                });
+                //click para usuarios desktop
+                btn.addEventListener('click', () => {
+                    mudarProdutos(btn.dataset.cat);
+                });
+            });
+        </script>
+
+    </body>
+
+</html>
